@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/xellosslee/imageDownloader#readme",
   "dependencies": {
+    "fs": "0.0.1-security",
     "http": "0.0.0",
     "https": "^1.0.0",
-    "parse-int": "^1.0.3"
+    "parse-int": "^1.0.3",
+    "path": "^0.12.7"
   }
 }
