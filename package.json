@@ -1,0 +1,24 @@
+{
+  "name": "imagedownloader",
+  "version": "1.0.0",
+  "description": "연속된 숫자로 된 파일명을 가진 웹사이트 이미지를 다운로드 받는 프로그램",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xellosslee/imageDownloader.git"
+  },
+  "author": "xellosslee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xellosslee/imageDownloader/issues"
+  },
+  "homepage": "https://github.com/xellosslee/imageDownloader#readme",
+  "dependencies": {
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "parse-int": "^1.0.3"
+  }
+}
