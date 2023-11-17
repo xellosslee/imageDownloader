@@ -25,15 +25,19 @@ var idxTerm = 50
 // 기본적으로 상위 경로를 폴더명 으로
 var foldername = process.argv[4] === undefined ? process.argv[2].split('/')[process.argv[2].split('/').length - 2] : process.argv[4]
 
-// 동일한 폴더명 존재시 _00 으로 신규 폴더 생성
-while(fs.existsSync(foldername)) {
-  if(parseInt(foldername.substr(foldername.length-2, 2)) !== undefined)
-    foldername = foldername.split('_')[0] + '_' + (parseInt(foldername.substr(foldername.length-2, 2)) + 1)
-  else
-    foldername = foldername + '_00'
+let saveSameFolder = true
+if (saveSameFolder && fs.existsSync(foldername)) {
+} else {
+  // 동일한 폴더명 존재시 _00 으로 신규 폴더 생성
+  while(fs.existsSync(foldername)) {
+    if(parseInt(foldername.substring(foldername.length-2, 2)) !== undefined)
+      foldername = foldername.split('_')[0] + '_' + (parseInt(foldername.substring(foldername.length-2, 2)) + 1)
+    else
+      foldername = foldername + '_00'
+  }
+  fs.mkdirSync(path.resolve(__dirname, foldername));
+  console.log(`download from : ${url} \nsaved folder : ${foldername}`)
 }
-fs.mkdirSync(path.resolve(__dirname, foldername));
-console.log(`download from : ${url} \nsaved folder : ${foldername}`)
 
 
 for(i = 0; i < threadCnt ; i++) {
